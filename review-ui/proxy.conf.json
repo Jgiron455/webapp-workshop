@@ -1,0 +1,13 @@
+{
+	"/api/*": {
+		"target": "http://localhost:8080/",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel":"debug",
+        "headers":{
+            "fullname":"Test User",
+            "email":"test.user@gmail.com",
+            "telephoneNumber":"07777777777"
+        }
+	}
+}
