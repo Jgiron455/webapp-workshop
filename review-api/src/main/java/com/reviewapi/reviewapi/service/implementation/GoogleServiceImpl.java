@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-@Service("googleServiceImpl")
+@Service
 public class GoogleServiceImpl implements GoogleService {
     private static final Logger LOG = LoggerFactory.getLogger(GoogleServiceImpl.class);
 
