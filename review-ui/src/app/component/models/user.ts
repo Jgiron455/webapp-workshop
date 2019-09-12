@@ -1,17 +1,17 @@
 export class User {
     private id: string;
-    private profile_url: string;
-    private image_url: string;
+    private profileUrl: string;
+    private imageUrl: string;
     private name: string;
 
     constructor(
         id?: string,
-        profile_url?: string,
-        image_url?: string,
+        profileUrl?: string,
+        imageUrl?: string,
         name?: string) {
         this.id = id;
-        this.profile_url = profile_url;
-        this.image_url = image_url;
+        this.profileUrl = profileUrl;
+        this.imageUrl = imageUrl;
         this.name = name;
     }
 

@@ -11,8 +11,7 @@ import { InventoryViewService } from '../inventory-view.service';
 export class ReviewCardComponent implements OnInit {
 
   @Input() review: Review;
-  
-  constructor(private inventoryService: InventoryViewService) {}
+  constructor(private inventoryService: InventoryViewService) { }
 
   ngOnInit() {
     // console.log('review: ', this.review);

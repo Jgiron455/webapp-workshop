@@ -8,17 +8,16 @@ import { MyLocation } from '../models/myLocation';
 })
 export class InventoryViewService {
 
-  private _reviewList$: BehaviorSubject<MyLocation[]>;
-
+  public reviewList$: BehaviorSubject<MyLocation[]>;
   public selectedCategory: BehaviorSubject<string[]>;
   public selectedType: BehaviorSubject<string[]>;
 
-  public get reviewList$(): BehaviorSubject<MyLocation[]> {
-    return this._reviewList$;
-  }
-  public set reviewList$(value: BehaviorSubject<MyLocation[]>) {
-    this._reviewList$ = value;
-  }
+  // public get getReviewList$(): BehaviorSubject<MyLocation[]> {
+  //   return this.reviewList$;
+  // }
+  // public set setReviewList$(value: BehaviorSubject<MyLocation[]>) {
+  //   this.reviewList$ = value;
+  // }
 
   constructor(private http: HttpClient) {}
   public get(uri: string, params?: HttpParams): any {
