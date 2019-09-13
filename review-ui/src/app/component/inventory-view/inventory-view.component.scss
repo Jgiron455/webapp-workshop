@@ -1,0 +1,83 @@
+.center {
+  position: absolute;
+  top: 25%;
+  // left: 25%;
+}
+
+.center-top {
+  position: absolute;
+  top: 5%;
+  // left: 50%;
+}
+
+.review-cards {
+  position: absolute;
+  width: 95%;
+  min-height: 500px;
+  // top: 25%;
+  margin-top: 250px;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.spinner {
+  width: "100px";
+  height: "100px";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #3e3e3b;;
+}
+
+@keyframes ui-progress-spinner-color {
+  100%,
+  0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #0057e7;
+  }
+  66% {
+    stroke: #008744;
+  }
+  80%,
+  90% {
+    stroke: #ffa700;
+  }
+}
+
+.star {
+  color: orange;
+  margin: 2px;
+}
+
+.star-rating {
+  float: right;
+}
+
+.capitalize {
+  text-transform: capitalize;
+  float:right;
+}

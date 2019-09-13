@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <h3 class="header">My Reviews!</h3>
+</div>
+
+<nav class="search-bar">
+    <div class="input-group">
+        <div *ngIf="(inventoryService.reviewList$ | async)" class="input-group-append">
+            <p-multiSelect [style]="{height:'2.8em'}" defaultLabel="Category" [options]="(categories$ | async)" [(ngModel)]="selectedCategory"
+                [panelStyle]="{minWidth:'15em'}" (onChange)="onCategorySelected($event)">
+            </p-multiSelect>
+            <p-multiSelect [style]="{height:'2.8em'}" defaultLabel="Review By" [options]="(type$ | async)" [(ngModel)]="selectedType"
+                [panelStyle]="{minWidth:'15em'}" (onChange)="onReview($event)"></p-multiSelect>
+        </div>
+        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" [(ngModel)]="inputValue"
+            (keydown.enter)="onSearch($event)">
+        <div class="input-group-append">
+            <button type="button" class="btn btn-outline-secondary" (click)="onSearch($event)"><i
+                    class="fa fa-search"></i></button>
+            <button type="button" class="btn btn-outline-secondary" (click)="onOpenModal($event)"><i
+                    class="fa fa-location-arrow"></i></button>
+        </div>
+    </div>
+</nav>
+<!-- <div *ngIf="(inventoryService.reviewList$ | async)">
+    <p-multiSelect defaultLabel="Category" [options]="(categories$ | async)" [(ngModel)]="selectedCategory"
+        [panelStyle]="{minWidth:'15em'}" (onChange)="onCategorySelected($event)">
+    </p-multiSelect>
+    <p-multiSelect defaultLabel="Review By" [options]="(type$ | async)" [(ngModel)]="selectedType"
+        [panelStyle]="{minWidth:'15em'}" (onChange)="onReview($event)"></p-multiSelect>
+</div> -->
+
+<div>
+    <p-dialog header="Select Your Destination!" [(visible)]="isModal" (onHide)="onHide($event)" [style]="{width: '600px', height: '550px'}">
+        <div>
+            <p-gmap #gmap [options]="options" [overlays]="overlays" [style]="{'width':'100%','height':'500px'}"
+                (onMapClick)="handleMapClick($event)"></p-gmap>
+        </div>
+    </p-dialog>
+</div>
+
+
+<br>

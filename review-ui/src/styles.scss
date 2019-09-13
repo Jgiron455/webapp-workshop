@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.ui-fieldset .ui-fieldset-legend a {
+  color: #cbc5c1;
+  background-color: #3e3e3b;
+}
+
+body .ui-carousel .ui-carousel-viewport .ui-carousel-items .ui-carousel-item {
+  border: 0px;
+}
+
+.ui-carousel-item {
+  background-color: #cbc5c1;
+}
+
+.ui-carousel-item.ui-widget-content.ui-corner-all.ng-star-inserted {
+  background-color: #cbc5c1;
+  min-height: 375px;
+  border: 0px;
+}

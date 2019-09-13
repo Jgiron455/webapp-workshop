@@ -1,0 +1,13 @@
+{
+	"/api/*": {
+		"target": "http://localhost:9091/",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel":"debug",
+        "headers":{
+            "fullname":"Test User",
+            "email":"test.user@gmail.com",
+            "telephoneNumber":"07777777777"
+        }
+	}
+}

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.*;
 
-@Service("googleClientImpl")
+@Service
 public class GoogleClient {
     private static final Logger LOG = LoggerFactory.getLogger(GoogleClient.class);
 

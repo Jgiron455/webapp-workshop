@@ -1,0 +1,46 @@
+<div *ngIf="!isLoading" class="container-fluid">
+    <div [ngClass]="onSearchClass()">
+        <app-search-bar (event)="onEvent($event)" (onSelected)="onSelected($event)"></app-search-bar>
+    </div>
+</div>
+
+<div *ngIf="!isLoading && myLocationReview" class="container-fluid">
+    <div class="container-fluid">
+        <div class="review-cards">
+            <p-paginator [rows]="paginatorSize" [totalRecords]="paginatorLength" (onPageChange)="paginate($event)"> </p-paginator>
+            <p-accordion>
+                <p-accordionTab *ngFor="let myLocation of (inventoryService.reviewList$ |async)">
+                    <p-header>
+                        <span>{{myLocation.name}} {{myLocation.address}}</span>
+                        <div class="star-rating">
+                            <span *ngFor="let star of getRatings(myLocation.ratings)" [ngClass]="star"></span>
+                        </div>
+                    </p-header>
+                    <ng-template pTemplate="content">
+                        <div>
+                            <h2>{{myLocation?.name}}{{myLocation?.address}}</h2>
+                            <br>
+                            <h4 *ngIf="myLocation.displayNumber">Phone No: {{myLocation?.displayNumber}}</h4>
+                        </div>
+                        <div class="review-card" *ngIf="myLocation?.reviews.length > 0">
+                            <p-carousel easing="easeOutStrong" circular="circular" autoplayInterval="6000"
+                                [value]="myLocation.reviews">
+                                <ng-template let-item pTemplate="myLocation.reviews">
+                                    <app-review-card [review]="item"></app-review-card>
+                                </ng-template>
+                            </p-carousel>
+                        </div>
+                        <div>
+                            <span class="capitalize">Source: {{myLocation?.reviewType}}</span>
+                            <br>
+                        </div>
+                    </ng-template>
+                </p-accordionTab>
+            </p-accordion>
+        </div>
+    </div>
+</div>
+<p-progressSpinner *ngIf="isLoading" class="spinner" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s">
+</p-progressSpinner>
+
+<p-messages [(value)]="msgs"></p-messages>

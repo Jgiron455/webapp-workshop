@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
-@Service("apiOrchestrationImpl")
+@Service
 public class APIOrchestration {
 
     private static final Logger LOG = LoggerFactory.getLogger(APIOrchestration.class);

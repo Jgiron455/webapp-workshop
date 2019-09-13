@@ -1,0 +1,12 @@
+<div class="review-card">
+    <div class="review-card-header">
+        <span *ngFor="let star of getRatings(review.rating)" [ngClass]="star"></span>
+        <span style="float: right; font-size:1em;">  {{ review?.created | date:'fullDate' }}</span>
+    </div>
+    <div *ngIf="review?.text" class="review-card-content">
+        {{review?.text}}
+    </div>
+    <div class="review-card-footer">
+        {{review?.name ? review?.name : 'Anonymous'}}
+    </div>
+</div>
