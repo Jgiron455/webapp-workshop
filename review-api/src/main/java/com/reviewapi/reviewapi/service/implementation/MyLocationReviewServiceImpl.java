@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,9 @@ public class MyLocationReviewServiceImpl implements MyLocationReviewService {
 
     @Autowired
     private MyLocationServiceImpl myLocationServiceImpl;
+
+    @Autowired
+    private MongoDBClientImpl mongoDBClientImpl;
 
 
     public MyLocationReviewDto getGoogleMyLocationReview(String inputText){
@@ -75,7 +79,6 @@ public class MyLocationReviewServiceImpl implements MyLocationReviewService {
         LOG.info("getGoogleMyLocationReview() -> myLocationDtos: {}", myLocationDtos);
         return new MyLocationReviewDto(getGeometry(lat, lng, radius), myLocationDtos);
     }
-
 
     private String getGeometry(double lat, double lng, int radius){
         return String.valueOf(lat) + " " + String.valueOf(lng) + " " + String.valueOf(radius);
