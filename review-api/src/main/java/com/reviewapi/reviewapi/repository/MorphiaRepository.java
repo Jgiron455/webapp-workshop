@@ -1,8 +1,7 @@
-package repository;
+package com.reviewapi.reviewapi.repository;
 
 
 import com.reviewapi.reviewapi.dto.MyLocationDto;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.UserReviewRepository;
+import com.reviewapi.reviewapi.repository.UserReviewRepository;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -17,11 +17,8 @@ public class UserReviewService {
     private static final Logger LOG = LoggerFactory.getLogger(UserReviewService.class);
 
     @Autowired
-    private final UserReviewRepository userReviewRepository;
+    private UserReviewRepository userReviewRepository;
 
-    public UserReviewService(UserReviewRepository userReviewRepository) {
-        this.userReviewRepository = userReviewRepository;
-    }
 
     @Transactional
     public List<UserReview> getAllReviews(){
@@ -53,7 +50,7 @@ public class UserReviewService {
         LOG.info("getAllReviewByInputText() -> Retrieving all the reviews by inputText {}", inputText);
         List<UserReview> userReviews = new ArrayList<>();
 
-        userReviews = userReviewRepository.findByCommentContaningOrContentContaining(inputText, inputText);
+        userReviews = userReviewRepository.findByCommentContaining(inputText);
 
         LOG.info("getAllReviewByInputText() -> {}", userReviews);
         return userReviews;

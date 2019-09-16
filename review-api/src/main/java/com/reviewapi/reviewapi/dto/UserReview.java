@@ -3,7 +3,7 @@ package com.reviewapi.reviewapi.dto;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "UserReview")
+@Table(name = "userReview")
 public class UserReview {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

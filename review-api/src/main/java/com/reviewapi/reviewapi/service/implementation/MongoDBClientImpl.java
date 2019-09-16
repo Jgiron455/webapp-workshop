@@ -4,11 +4,10 @@ import com.mongodb.MongoClient;
 import com.reviewapi.reviewapi.dto.MyLocationDto;
 import dev.morphia.Datastore;
 import dev.morphia.Morphia;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import repository.MorphiaRepository;
+import com.reviewapi.reviewapi.repository.MorphiaRepository;
 
 import java.util.ArrayList;
 import java.util.List;

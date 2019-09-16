@@ -1,4 +1,4 @@
-package repository;
+package com.reviewapi.reviewapi.repository;
 
 import com.reviewapi.reviewapi.dto.MyLocationDto;
 import com.reviewapi.reviewapi.service.implementation.MongoDBClientImpl;

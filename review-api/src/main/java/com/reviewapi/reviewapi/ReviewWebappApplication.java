@@ -12,11 +12,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EnableAutoConfiguration
-@ComponentScan(basePackages={"com.reviewapi.reviewapi"})
-@EnableJpaRepositories(basePackages="com.reviewapi.reviewapi.repository")
-@EnableTransactionManagement
-@EntityScan(basePackages="com.reviewapi.reviewapi")
 public class ReviewWebappApplication {
 
 	public static void main(String[] args) {
