@@ -7,18 +7,18 @@ import dev.morphia.Morphia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import repository.MorphiaRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class MongoDBClientImpl implements MorphiaRepository {
-
-    @Autowired
-    private Morphia morphia;
 
     private static final Logger LOG = LoggerFactory.getLogger(MongoDBClientImpl.class);
 
+    private Morphia morphia;
     private Datastore datastore;
 
     public MongoDBClientImpl() {

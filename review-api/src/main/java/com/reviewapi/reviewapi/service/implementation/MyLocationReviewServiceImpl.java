@@ -26,10 +26,6 @@ public class MyLocationReviewServiceImpl implements MyLocationReviewService {
     @Autowired
     private MyLocationServiceImpl myLocationServiceImpl;
 
-    @Autowired
-    private MongoDBClientImpl mongoDBClientImpl;
-
-
     public MyLocationReviewDto getGoogleMyLocationReview(String inputText){
         LOG.info("getGoogleMyLocationReview() -> inputText: {}", inputText);
         List<MyLocationDto> myLocationDtos = new ArrayList<>();
