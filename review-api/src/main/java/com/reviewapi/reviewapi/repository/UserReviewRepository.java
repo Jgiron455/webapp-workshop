@@ -19,4 +19,6 @@ public interface UserReviewRepository extends JpaRepository<UserReview, Integer>
 
     List<UserReview> findByCommentContaining(String inputText);
 
+    UserReview save(UserReview userReview);
+
 }

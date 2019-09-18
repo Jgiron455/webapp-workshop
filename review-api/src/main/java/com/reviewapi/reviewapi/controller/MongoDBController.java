@@ -33,7 +33,7 @@ public class MongoDBController {
     ResponseEntity<?> getMyReviews(@RequestParam(value ="inputText", required=false) String inputText) {
         LOG.info("getMyReviews() -> inputText: {}", inputText);
         Optional<List<MyLocationDto>> myLocationDtos = Optional.ofNullable(new ArrayList<>());
-        if(inputText.isEmpty()) {
+        if(inputText == null) {
             myLocationDtos = Optional.ofNullable(mongoDBClientImpl.get());
         } else {
             myLocationDtos = Optional.ofNullable(mongoDBClientImpl.get(inputText));

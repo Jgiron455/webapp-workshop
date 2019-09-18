@@ -3,11 +3,11 @@ package com.reviewapi.reviewapi.dto;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "userReview")
+@Table(name = "user_review")
 public class UserReview {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name="forename")
     private String forename;
@@ -36,7 +36,7 @@ public class UserReview {
         this.rating = rating;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
