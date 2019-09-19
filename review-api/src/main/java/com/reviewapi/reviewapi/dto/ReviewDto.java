@@ -1,17 +1,26 @@
 package com.reviewapi.reviewapi.dto;
 
+import dev.morphia.annotations.Id;
+import dev.morphia.annotations.Property;
+
 import java.util.Objects;
+
 
 public class ReviewDto {
 
+    @Id
     private String id;
 
+    @Property("rating")
     private Double rating;
 
+    @Property("name")
     private String name;
 
+    @Property("text")
     private String text;
 
+    @Property("created")
     private String created;
 
     public ReviewDto() {

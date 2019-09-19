@@ -1,36 +1,58 @@
 package com.reviewapi.reviewapi.dto;
 
 import com.reviewapi.reviewapi.dto.enumeration.ReviewTypeEnum;
+import dev.morphia.annotations.*;
+import dev.morphia.utils.IndexType;
+import org.bson.types.ObjectId;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.List;
 import java.util.Objects;
 
+@Indexes(
+        @Index(fields =
+        @Field(value = "$**",
+                type = IndexType.TEXT)))
+@Entity("MyLocationDto")
 public class MyLocationDto {
 
+    @Property("reviewType")
     private String reviewType;
 
+    @Property("alias")
     private String alias;
 
+    @Property("name")
     private String name;
 
+    @Property("isClosed")
     private Boolean isClosed;
 
+    @Property("address")
     private String address;
 
+    @Property("phoneNumber")
     private String phoneNumber;
 
+    @Property("displayNumber")
     private String displayNumber;
 
+    @Property("url")
     private String url;
 
+    @Property("displayName")
     private List<String> displayName;
 
+    @Property("ratings")
     private Double ratings;
 
+    @Property("categories")
     private List<String> categories;
 
+    @Property("photos")
     private List<String> photos;
 
+    @Reference("reviews")
     private List<ReviewDto> reviews;
 
     public MyLocationDto() {
@@ -51,7 +73,6 @@ public class MyLocationDto {
         this.photos = photos;
         this.reviews = reviews;
     }
-
 
     public String getReviewType() {
         return reviewType;

@@ -9,7 +9,7 @@
         <div class="review-cards">
             <p-paginator [rows]="paginatorSize" [totalRecords]="paginatorLength" (onPageChange)="paginate($event)"> </p-paginator>
             <p-accordion>
-                <p-accordionTab *ngFor="let myLocation of (inventoryService.reviewList$ |async)">
+                <p-accordionTab *ngFor="let myLocation of (inventoryService.reviewList$ | async)">
                     <p-header>
                         <span>{{myLocation.name}} {{myLocation.address}}</span>
                         <div class="star-rating">

@@ -26,7 +26,7 @@ export class SearchBarComponent implements OnInit {
   public options: any;
   public overlays: any[];
 
-  constructor(private inventoryService: InventoryViewService) { }
+  constructor(public inventoryService: InventoryViewService) { }
 
   ngOnInit() {
     this.inputValue = '';
