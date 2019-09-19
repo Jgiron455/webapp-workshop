@@ -15,8 +15,6 @@ import java.util.Objects;
                 type = IndexType.TEXT)))
 @Entity("MyLocationDto")
 public class MyLocationDto {
-    @Id
-    private ObjectId id;
 
     @Property("reviewType")
     private String reviewType;
@@ -74,14 +72,6 @@ public class MyLocationDto {
         this.categories = categories;
         this.photos = photos;
         this.reviews = reviews;
-    }
-
-    public String getId() {
-        return id.toHexString();
-    }
-
-    public void setId(String id) {
-        this.id = new ObjectId(id);
     }
 
     public String getReviewType() {

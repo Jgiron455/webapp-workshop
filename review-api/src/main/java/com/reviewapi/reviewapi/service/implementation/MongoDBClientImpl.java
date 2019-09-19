@@ -21,11 +21,11 @@ public class MongoDBClientImpl implements MorphiaRepository {
     private Datastore datastore;
 
     public MongoDBClientImpl() {
-        LOG.info("initializing MongoDB Connection");
-        morphia = new Morphia();
-        morphia.mapPackage("com.reviewapi.reviewapi");
-        datastore = morphia.createDatastore(new MongoClient( "localhost" ), "myLocations");
-        datastore.ensureIndexes();
+//        LOG.info("initializing MongoDB Connection");
+//        morphia = new Morphia();
+//        morphia.mapPackage("com.reviewapi.reviewapi");
+//        datastore = morphia.createDatastore(new MongoClient( "localhost" ), "myLocations");
+//        datastore.ensureIndexes();
     }
 
     public MyLocationDto save(MyLocationDto obj){

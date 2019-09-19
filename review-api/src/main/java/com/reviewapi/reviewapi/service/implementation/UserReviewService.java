@@ -16,7 +16,7 @@ public class UserReviewService {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserReviewService.class);
 
-    @Autowired
+//    @Autowired
     private UserReviewRepository userReviewRepository;
 
 

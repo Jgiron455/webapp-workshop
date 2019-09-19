@@ -26,7 +26,7 @@ export class InventoryViewComponent implements OnInit {
 
   public msgs: any[];
 
-  constructor(private inventoryService: InventoryViewService) { }
+  constructor(public inventoryService: InventoryViewService) { }
 
   ngOnInit() {
     this.isLoading = false;

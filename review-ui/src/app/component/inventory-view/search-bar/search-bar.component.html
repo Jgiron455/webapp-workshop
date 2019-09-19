@@ -12,11 +12,11 @@
                 [panelStyle]="{minWidth:'15em'}" (onChange)="onReview($event)"></p-multiSelect>
         </div>
         <input type="text" class="form-control" placeholder="Search..." aria-label="Search" [(ngModel)]="inputValue"
-            (keydown.enter)="onSearch($event)">
+            (keydown.enter)="onSearch()">
         <div class="input-group-append">
-            <button type="button" class="btn btn-outline-secondary" (click)="onSearch($event)"><i
+            <button type="button" class="btn btn-outline-secondary" (click)="onSearch()"><i
                     class="fa fa-search"></i></button>
-            <button type="button" class="btn btn-outline-secondary" (click)="onOpenModal($event)"><i
+            <button type="button" class="btn btn-outline-secondary" (click)="onOpenModal()"><i
                     class="fa fa-location-arrow"></i></button>
         </div>
     </div>
